@@ -17,7 +17,7 @@ function SWEP:PrimaryAttack() end
 function SWEP:SecondaryAttack() end
 
 hook.Add("PostDrawTranslucentRenderables", "SCP_096_DrawPlayers", function()
-    if not markedTable or table.Count(markedTable) == 0 then return end
+    if not markedTable or #markedTable == 0 then return end
 
     for _, ply in ipairs(player.GetAll()) do
         if not IsValid(ply) or not ply:Alive() then continue end
